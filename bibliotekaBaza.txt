@@ -23,26 +23,22 @@ CREATE TABLE knjige(
     naziv varchar(20),
     jezik varchar(40),
     izdavac varchar(35),
-    odeljenje_id int
+    bibl_id int,
+    poz_od_id int
 ) ENGINE=INNODB
 
 
-CREATE TABLE odeljenje(
-    odeljenje_id int PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE pozajmno_odeljenje(
+    poz_od_id int PRIMARY KEY AUTO_INCREMENT,
+    aktuelnost varchar(30),
+    zanr varchar(15),
     decije_id int,
-    pozajmno_id int,
     naucno_id int
 ) ENGINE=INNODB
 
 CREATE TABLE decije_knjige(
     decije_id int PRIMARY KEY AUTO_INCREMENT,
     uzrast varchar(15)
-) ENGINE=INNODB
-
-CREATE TABLE pozajmno(
-    pozajmno_id int PRIMARY KEY AUTO_INCREMENT,
-    aktuelnost varchar(30),
-    zanr varchar(15)
 ) ENGINE=INNODB
 
 CREATE TABLE naucne_knjige(
@@ -129,21 +125,16 @@ ON UPDATE CASCADE
 ON DELETE NO ACTION
 
 ALTER TABLE knjige
-ADD FOREIGN KEY (odeljenje_id) REFERENCES odeljenje(odeljenje_id)
+ADD FOREIGN KEY (poz_od_id) REFERENCES pozajmno_odeljenje(poz_od_id)
 ON UPDATE CASCADE
 ON DELETE NO ACTION
 
-ALTER TABLE odeljenje
+ALTER TABLE pozajmno_odeljenje
 ADD FOREIGN KEY (decije_id) REFERENCES decije_knjige(decije_id)
 ON UPDATE CASCADE
 ON DELETE NO ACTION
 
-ALTER TABLE odeljenje
-ADD FOREIGN KEY (pozajmno_id) REFERENCES pozajmno(pozajmno_id)
-ON UPDATE CASCADE
-ON DELETE NO ACTION
-
-ALTER TABLE odeljenje
+ALTER TABLE pozajmno_odeljenje
 ADD FOREIGN KEY (naucno_id) REFERENCES naucne_knjige(naucno_id)
 ON UPDATE CASCADE
 ON DELETE NO ACTION
