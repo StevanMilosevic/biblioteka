@@ -23,6 +23,7 @@ CREATE TABLE knjige(
     naziv varchar(20),
     jezik varchar(40),
     izdavac varchar(35),
+    ISBN varchar(20),
     bibl_id int,
     poz_od_id int
 ) ENGINE=INNODB

@@ -2,7 +2,7 @@ INSERT INTO `biblioteke`(`bibl_id`, `naziv`, `ulica`, `broj`, `telefon`) VALUES 
 
 INSERT INTO `clanovi`(`clan_karta_id`, `ime`, `prezime`, `dat_rodj`, `ulica`, `broj`, `telefon`) VALUES ('1','Pera','Peric','1984-02-06','Marsala Tita','23','0659871230'), ('2','Ana','Milovanovic','1991-11-04','Ustanicka','6','0643219158')
 
-INSERT INTO `bibl_clanovi`(`bibl_clan_id`, `bibl_id`, `clan_karta_id`) VALUES ('1','1','1'), ('2','1','2'), ('3','1','3'), ('4','1','4')
+INSERT INTO `bibl_clanovi`(`bibl_clan_id`, `bibl_id`, `clan_karta_id`) VALUES ('1','1','1'), ('2','1','2')
 
 INSERT INTO `bibliotekari`(`bibliotekar_id`, `ime`, `prezime`, `ulica`, `broj`, `jmbg`, `telefon`, `bibl_id`) VALUES ('1','Milos','Milosevic','Kneza Milosa','41','1205966762011','0119515203','1'), ('2','Jelena','Knezzevic','Baba Visnjina','15','0211980653210','0113255001','1')
 
@@ -12,10 +12,10 @@ INSERT INTO `naucne_knjige`(`naucno_id`, `oblast`) VALUES ('1','Informatika'), (
 
 INSERT INTO `pozajmno_odeljenje`(`poz_od_id`, `aktuelnost`, `zanr`, `decije_id`, `naucno_id`) VALUES ('1','Popularna knjiga','Programiranje','1','1'), ('2','Lektira','Decija knjizevnost','1','1')
 
-INSERT INTO `knjige`(`knjiga_id`, `naziv`, `jezik`, `izdavac`, `bibl_id`, `poz_od_id`) VALUES ('1','Java programiranje','srpski','Mikro knjiga','1','1'), ('2','Druzina Pere Kvrzice','hrvatski','Nolit','1','2')
+INSERT INTO `knjige`(`knjiga_id`, `naziv`, `jezik`, `izdavac`, `ISBN`, `bibl_id`, `poz_od_id`) VALUES ('1','Java programiranje','srpski','Mikro knjiga','9806251-23', '1','1'), ('2','Orlovi rano lete','srpski','Nolit','3216548-003','1','2')
 
 INSERT INTO `uzete_knjige`(`uzeto_id`, `clan_karta_id`, `bibliotekar_id`, `knjiga_id`, `datum_izdavanja`, `datum_vracanja`) VALUES ('1','1','1','1','2023-04-29','2023-05-09'), ('2','2','1','2','2023-05-04','2023-05-14')
 
-INSERT INTO `autori`(`autor_id`, `ime`, `prezime`) VALUES ('1','Dzejms','Gosling'), ('2','Mato','Lovrak')
+INSERT INTO `autori`(`autor_id`, `ime`, `prezime`) VALUES ('1','Dzejms','Gosling'), ('2','Branko','Copic')
 
 INSERT INTO `autori_knjige`(`autori_knjige_id`, `autor_id`, `knjiga_id`) VALUES ('1','1','1'), ('2','2','2')
